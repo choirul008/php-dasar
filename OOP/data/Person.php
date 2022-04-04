@@ -8,6 +8,11 @@ class Person
     var ?string  $adress = null;
     var string $country = "Indonesia";
 
+    function __construct(string $name, ?string $adress){
+        $this->name = $name;
+        $this->adress = $adress;
+    }
+
     function sayHello(?string $name)
     {
         if(is_null($name)){
@@ -20,5 +25,10 @@ class Person
     function info()
     {
         echo "Author : " . self::AUTHOR . PHP_EOL;
+    }
+
+    function __destruct()
+    {
+        echo "Object person $this->name is destroyed" . PHP_EOL;
     }
 }
